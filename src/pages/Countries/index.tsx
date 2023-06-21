@@ -22,10 +22,11 @@ export const Countries = () => {
   };
   const lowerSearch = search.toLowerCase();
 
-  const filteredCountry = countries.filter((country) =>
-    country.name.toLowerCase().includes(lowerSearch)
+  const filteredCountry = countries.filter(
+    (country) =>
+      country.name.toLowerCase().includes(lowerSearch) ||
+      country.region.toLowerCase().includes(lowerSearch)
   );
-
   return (
     <C.CountriesArea>
       <Input value={search} setSearch={setSearch} />
