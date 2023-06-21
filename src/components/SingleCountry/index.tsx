@@ -1,7 +1,6 @@
 import * as C from './styles';
 import { SingleCountryTS } from '../../types/SingleCountryTS';
 import { Link } from 'react-router-dom';
-
 export const SingleCountry = ({
   name,
   nativeName,

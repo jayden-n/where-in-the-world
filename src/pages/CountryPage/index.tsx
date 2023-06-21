@@ -7,19 +7,23 @@ import { api } from '../../api';
 import { SingleCountry } from '../../components/SingleCountry';
 
 export const CountryPage = () => {
-  const { name } = useParams();
+  const { name, code } = useParams();
   const [loading, setLoading] = useState(false);
   const [country, setCountry] = useState<CountryTS[]>([]);
 
   useEffect(() => {
     if (name) {
       getCountry(name);
+    } else if (code) {
+      getCountry(code);
     }
-  }, [name]);
+  }, [name, code]);
 
   const getCountry = async (param: string) => {
     setLoading(true);
-    const country = await api.getCountry(param);
+    const country = name
+      ? await api.getCountry(param)
+      : await api.getCountryByCode(param);
     setCountry(country);
     console.log(country);
     setLoading(false);
