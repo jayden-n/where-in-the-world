@@ -24,7 +24,7 @@ export const Countries = () => {
     <C.CountriesArea>
       <Input />
       <div className="countries">
-        {loading && <div className="">Loading...</div>}
+        {loading && <div className="">Hang on...</div>}
         {!loading &&
           countries.map((item) => (
             <CountryItem
