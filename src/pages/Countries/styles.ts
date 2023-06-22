@@ -34,6 +34,7 @@ export const CountriesArea = styled.main<{ theme: string }>`
       box-shadow: 1px 1px 1em rgba(0, 0, 0, 0.2);
       margin: 0px 5px;
       cursor: pointer;
+      border-radius: 50px;
     }
 
     .active {
