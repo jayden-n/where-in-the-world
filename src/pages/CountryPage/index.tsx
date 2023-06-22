@@ -3,7 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import { SingleCountry } from '../../components/SingleCountry';
 import { useEffect, useState } from 'react';
 import { CountryTS } from '../../types/Country';
-import { motion } from 'framer-motion';
+
 import { api } from '../../api';
 import { useForm } from '../../contexts/ThemeContext';
 import { FaHandPointLeft } from 'react-icons/fa';
@@ -24,7 +24,7 @@ export const CountryPage = () => {
 
   const getCountry = async (param: string) => {
     setLoading(true);
-    let country = name
+    const country = name
       ? await api.getCountry(param)
       : await api.getCountryByCode(param);
     setCountry(country);

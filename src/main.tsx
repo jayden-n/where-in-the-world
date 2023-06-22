@@ -1,16 +1,17 @@
 import React from 'react';
-import { BrowserRouter as Routes } from 'react-router-dom';
-import ReactDOM from 'react-dom/client';
-import App from './App.tsx';
-import { ThemeProvider } from './contexts/ThemeContext.tsx';
+import ReactDOM from 'react-dom';
 import './index.css';
+import { ThemeProvider } from './contexts/ThemeContext';
+import { BrowserRouter as Routes } from 'react-router-dom';
+import App from './App';
 
-ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+ReactDOM.render(
   <React.StrictMode>
-    <ThemeProvider>
-      <Routes>
+    <Routes>
+      <ThemeProvider>
         <App />
-      </Routes>
-    </ThemeProvider>
-  </React.StrictMode>
+      </ThemeProvider>
+    </Routes>
+  </React.StrictMode>,
+  document.getElementById('root')
 );

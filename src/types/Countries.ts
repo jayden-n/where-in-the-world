@@ -3,7 +3,7 @@ export interface CountriesTS {
   capital: string;
   population: number;
   region: string;
-  numericCode: number;
+  numericCode: string;
   flags: {
     png: string;
   };

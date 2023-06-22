@@ -21,7 +21,7 @@ export const InputArea = styled.section<{ theme: string }>`
       props.theme === 'light' ? '' : 'rgb(43, 55, 67)'};
     color: ${(props) => (props.theme === 'light' ? '' : '#FFF')};
     border-radius: 50px;
-    ::placeholder {
+    input::placeholder {
       color: #ccc;
     }
   }

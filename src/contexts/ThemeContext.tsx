@@ -1,7 +1,7 @@
 import { createContext, useContext, useReducer } from 'react';
 
 interface State {
-  theme: string;
+  theme: any;
 }
 
 interface Actions {
