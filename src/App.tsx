@@ -1,5 +1,6 @@
-import { MainRoutes } from './Routes/MainRoutes';
 import { Header } from './components/Header';
+import { MainRoutes } from './Routes/MainRoutes';
+
 function App() {
   return (
     <>

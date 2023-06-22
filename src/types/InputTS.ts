@@ -1,4 +1,4 @@
 export interface InputTS {
   value: string;
-  setSearch: (e: string) => void;
+  search: (e: string) => void;
 }

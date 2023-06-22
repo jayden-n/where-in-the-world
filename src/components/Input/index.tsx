@@ -1,29 +1,37 @@
 import * as C from './styles';
 import { InputTS } from '../../types/InputTS';
+import { useForm } from '../../contexts/ThemeContext';
 import { useState } from 'react';
 import useDebounce from './useDebounce';
 
-const delay = 500;
-export const Input = ({ value, setSearch }: InputTS) => {
+const delay = 200;
+
+export const Input = ({ value, search }: InputTS) => {
+  const { state } = useForm();
+
   const [input, setInput] = useState('');
 
-  const debouncedChange = useDebounce(setSearch, delay);
+  const deboucedChange = useDebounce(search, delay);
 
   const handleChange = (e: string) => {
+    deboucedChange(e);
     setInput(e);
-    debouncedChange(e)
   };
+
   return (
-    <C.InputArea>
+    <C.InputArea theme={state.theme}>
       <input
         type="text"
         placeholder="Search for a country..."
         value={input}
         onChange={(e) => handleChange(e.target.value)}
       />
-      <select onChange={(e) => handleChange(e.target.value)}>
-        <option value="Filter by region" disabled selected>
-          Filter by region
+      <select
+        value="Filter by Region"
+        onChange={(e) => handleChange(e.target.value)}
+      >
+        <option disabled selected>
+          Filter by Region
         </option>
         <option value="Africa">Africa</option>
         <option value="Americas">Americas</option>

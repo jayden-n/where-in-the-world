@@ -1,13 +1,16 @@
-import { useEffect, useState } from 'react';
 import * as C from './styles';
-import { useParams } from 'react-router-dom';
-import { Link } from 'react-router-dom';
-import { CountryTS } from '../../types/Country';
-import { api } from '../../api';
+import { Link, useParams } from 'react-router-dom';
 import { SingleCountry } from '../../components/SingleCountry';
-
+import { useEffect, useState } from 'react';
+import { CountryTS } from '../../types/Country';
+import { motion } from 'framer-motion';
+import { api } from '../../api';
+import { useForm } from '../../contexts/ThemeContext';
+import { FaHandPointLeft } from 'react-icons/fa';
 export const CountryPage = () => {
+  const { state } = useForm();
   const { name, code } = useParams();
+
   const [loading, setLoading] = useState(false);
   const [country, setCountry] = useState<CountryTS[]>([]);
 
@@ -21,20 +24,21 @@ export const CountryPage = () => {
 
   const getCountry = async (param: string) => {
     setLoading(true);
-    const country = name
+    let country = name
       ? await api.getCountry(param)
       : await api.getCountryByCode(param);
     setCountry(country);
-    console.log(country);
     setLoading(false);
   };
+
   return (
-    <C.CountryPage>
+    <C.CountryPage theme={state.theme}>
       <div className="container">
         <Link to="/" className="back--button">
-          Go back
+          <FaHandPointLeft style={{ marginRight: '7px' }} size={20} /> Go back
         </Link>
-        {loading && <div className="loading">Hang on...</div>}
+
+        {loading && <div className="loading">Hang on..</div>}
         {!loading &&
           country.map((item) => (
             <SingleCountry

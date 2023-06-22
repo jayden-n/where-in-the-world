@@ -1,6 +1,8 @@
 import * as C from './styles';
-import { SingleCountryTS } from '../../types/SingleCountryTS';
+import { SingleCountryTS } from '../../types/SingleCountry';
 import { Link } from 'react-router-dom';
+import { useForm } from '../../contexts/ThemeContext';
+
 export const SingleCountry = ({
   name,
   nativeName,
@@ -14,8 +16,9 @@ export const SingleCountry = ({
   borders,
   flag,
 }: SingleCountryTS) => {
+  const { state } = useForm();
   return (
-    <C.CountryData>
+    <C.CountryData theme={state.theme}>
       <img src={flag} alt={`flag name: ${name}`} />
       <div className="data--area">
         <h1>{name}</h1>
@@ -26,7 +29,7 @@ export const SingleCountry = ({
           </p>
           <p>
             <span>Population: </span>
-            {population}
+            {population.toLocaleString()}
           </p>
           <p>
             <span>Region: </span>
@@ -61,7 +64,7 @@ export const SingleCountry = ({
             ))}
           </p>
         </div>
-        {borders && (
+        {borders ? (
           <div className="border--area">
             <p>Border Countries: </p>
             <div className="borders">
@@ -71,6 +74,13 @@ export const SingleCountry = ({
                 </Link>
               ))}
             </div>
+          </div>
+        ) : (
+          <div>
+            <div className="border--area">
+              <p>Border Countries: </p>
+            </div>
+            <p>There are no borders...</p>
           </div>
         )}
       </div>
