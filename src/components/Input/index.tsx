@@ -4,7 +4,7 @@ import { useForm } from '../../contexts/ThemeContext';
 import { useState } from 'react';
 import useDebounce from './useDebounce';
 
-const delay = 200;
+const delay = 150;
 
 export const Input = ({ value, search }: InputTS) => {
   const { state } = useForm();

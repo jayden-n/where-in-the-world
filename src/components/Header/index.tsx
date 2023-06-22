@@ -22,7 +22,8 @@ export const Header = () => {
     <C.Header theme={state.theme}>
       <div className="container">
         <h1>
-          Where in the world? <GiWorld style={{ marginBottom: '-3px' }} />
+          Where in the World?{' '}
+          <GiWorld style={{ marginBottom: '-4px', marginLeft: '2px' }} />
         </h1>
 
         {darkMode ? (
