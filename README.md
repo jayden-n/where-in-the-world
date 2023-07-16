@@ -24,7 +24,7 @@ The challenge is to integrate with the REST Countries V2 API to pull country dat
 <img width="1727" alt="Screenshot 2023-06-22 at 12 18 08 AM" src="https://github.com/jayden-n/where-in-the-world/assets/94060508/b7d49ca1-6dbf-48c3-80c7-0f77be155f4e">
 
   
-   This project is my way of thinking for an intertesting [challenge](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca)</strong></i> from <strong>[Frontend Mentor](https://www.frontendmentor.io/)</strong>  that I have accepted, in order to reinforce my JavaScript / TypeScript & React skills as well as crafting responsive websites.
+   This project is from <strong>[Frontend Mentor](https://www.frontendmentor.io/)</strong> that I have accepted, in order to reinforce my JavaScript / TypeScript & React skills as well as crafting responsive websites.
   
 
 ## Technologies - Frameworks - Libraries
